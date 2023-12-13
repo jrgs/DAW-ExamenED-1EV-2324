@@ -22,7 +22,7 @@ namespace ExamenED1EV2324
         int divisionRestas(int OSL, int DAW1)
         {
             // Declaramos una variable para almacenar el resultado.
-            int cont = 0;
+            int cont = 1;
             
             // Restamos el divisor al dividendo
             
