@@ -21,6 +21,7 @@ namespace ExamenED1EV2324
         // Contamos cuantas veces "cabe" el dividendo en el divisor.
         int divisionRestas(int dividendo, int divisor)
         {
+            //EXAMEN BLANCA ARIAS SAEZ. 
             // Declaramos una variable para almacenar el resultado.
             int cont = 0;
 
