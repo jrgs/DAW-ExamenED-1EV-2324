@@ -56,7 +56,7 @@ namespace ExamenED1EV2324
                     throw new Exception("El divisor no puede ser cero.");
                 }
                 // Comprobamos que el divisor no sea mayor que el dividendo.
-                if (dividendo_ARA2324 <= divisor_ARA2324)
+                if (dividendo_ARA2324 < divisor_ARA2324)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor ha de ser menor que el dividendo.");
