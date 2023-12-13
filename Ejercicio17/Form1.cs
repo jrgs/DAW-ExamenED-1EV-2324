@@ -19,16 +19,16 @@ namespace ExamenED1EV2324
 
         // Función que realiza una división entera mediante restas sucesivas.
         // Contamos cuantas veces "cabe" el dividendo en el divisor.
-        int divisionRestas(int dividendo, int divisor)
+        int divisionRestas(int dividendoBFCB2324, int divisorBFCB2324)
         {
             // Declaramos una variable para almacenar el resultado.
             int cont = 0;
 
             // Restamos el divisor al dividendo
             //
-            while (dividendo > divisor)
+            while (dividendoBFCB2324 >= divisorBFCB2324)
             {
-                    divisor -= dividendo;
+                dividendoBFCB2324 -= divisorBFCB2324;
                     cont++;
             }
 
@@ -49,13 +49,13 @@ namespace ExamenED1EV2324
                 divisor = int.Parse(txtDivisor.Text);
 
                 // Comprobamos que el divisor no sea cero.
-                if (divisor == 0)
+                if (divisor  ==  0)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor no puede ser cero.");
                 }
                 // Comprobamos que el divisor no sea mayor que el dividendo.
-                if (dividendo <= divisor)
+                if (dividendo < divisor)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor ha de ser menor que el dividendo.");
