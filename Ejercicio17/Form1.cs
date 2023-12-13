@@ -26,9 +26,9 @@ namespace ExamenED1EV2324
 
             // Restamos el divisor al dividendo
             //
-            while (dividendo > divisor)
+            while (dividendo >= divisor)
             {
-                    divisor -= dividendo;
+                    dividendo -= divisor;
                     cont++;
             }
 
@@ -42,30 +42,30 @@ namespace ExamenED1EV2324
             try
             {
                 // Declaramos las variables necesarias.
-                int dividendo, divisor, resultado;
+                int dividendoBAS23_24, divisorBAS23_24, resultado;
 
                 // Leemos los valores del cuadro de texto.
-                dividendo = int.Parse(txtDividendo.Text);
-                divisor = int.Parse(txtDivisor.Text);
+                dividendoBAS23_24 = int.Parse(txtDividendo.Text);
+                divisorBAS23_24 = int.Parse(txtDivisor.Text);
 
                 // Comprobamos que el divisor no sea cero.
-                if (divisor == 0)
+                if (divisorBAS23_24 == 0)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor no puede ser cero.");
                 }
                 // Comprobamos que el divisor no sea mayor que el dividendo.
-                if (dividendo <= divisor)
+                if (dividendoBAS23_24 < divisorBAS23_24)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor ha de ser menor que el dividendo.");
                 }
 
                 // Llamamos a la función para realizar la división.
-                resultado = divisionRestas(dividendo, divisor);
+                resultado = divisionRestas(dividendoBAS23_24, divisorBAS23_24);
 
                 // Mostramos el resultado.
-                MessageBox.Show("El resultado de dividir " + dividendo + " entre " + divisor + " es : " + resultado);
+                MessageBox.Show("El resultado de dividir " + dividendoBAS23_24 + " entre " + divisorBAS23_24 + " es : " + resultado);
             }
             catch (FormatException ex)
             {
