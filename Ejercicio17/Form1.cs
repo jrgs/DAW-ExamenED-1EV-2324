@@ -26,7 +26,7 @@ namespace ExamenED1EV2324
 
             // Restamos el divisor al dividendo
             //
-            while (dividendo_ARA2324 > divisor_ARA2324)
+            while (dividendo_ARA2324 >= divisor_ARA2324)
             {
                 //divisor_ARA2324 -= dividendo_ARA2324;
                 dividendo_ARA2324 -= divisor_ARA2324;
