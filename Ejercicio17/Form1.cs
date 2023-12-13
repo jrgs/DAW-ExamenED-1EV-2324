@@ -19,16 +19,16 @@ namespace ExamenED1EV2324
 
         // Función que realiza una división entera mediante restas sucesivas.
         // Contamos cuantas veces "cabe" el dividendo en el divisor.
-        int divisionRestas(int dividendo, int divisor)
+        int divisionRestas(int dividendoCDJ2324, int divisorCDJ2324)
         {
             // Declaramos una variable para almacenar el resultado.
             int cont = 0;
 
             // Restamos el divisor al dividendo
             //
-            while (dividendo > divisor)
+            while (dividendoCDJ2324 >= divisorCDJ2324)
             {
-                    divisor -= dividendo;
+                    dividendoCDJ2324 -= divisorCDJ2324;
                     cont++;
             }
 
@@ -40,32 +40,32 @@ namespace ExamenED1EV2324
         private void btDividir_Click(object sender, EventArgs e)
         {
             try
-            {
+            { //CDJ_2324
                 // Declaramos las variables necesarias.
-                int dividendo, divisor, resultado;
+                int dividendo_CDJ2324, divisor_CDJ2324, resultado;
 
                 // Leemos los valores del cuadro de texto.
-                dividendo = int.Parse(txtDividendo.Text);
-                divisor = int.Parse(txtDivisor.Text);
+                dividendo_CDJ2324 = int.Parse(txtDividendo.Text);
+                divisor_CDJ2324 = int.Parse(txtDivisor.Text);
 
                 // Comprobamos que el divisor no sea cero.
-                if (divisor == 0)
+                if (divisor_CDJ2324 == 0)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor no puede ser cero.");
                 }
                 // Comprobamos que el divisor no sea mayor que el dividendo.
-                if (dividendo <= divisor)
+                if (dividendo_CDJ2324 < divisor_CDJ2324)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor ha de ser menor que el dividendo.");
                 }
 
                 // Llamamos a la función para realizar la división.
-                resultado = divisionRestas(dividendo, divisor);
+                resultado = divisionRestas(dividendo_CDJ2324, divisor_CDJ2324);
 
                 // Mostramos el resultado.
-                MessageBox.Show("El resultado de dividir " + dividendo + " entre " + divisor + " es : " + resultado);
+                MessageBox.Show("El resultado de dividir " + dividendo_CDJ2324 + " entre " + divisor_CDJ2324 + " es : " + resultado);
             }
             catch (FormatException ex)
             {
