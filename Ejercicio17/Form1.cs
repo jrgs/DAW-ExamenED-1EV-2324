@@ -19,16 +19,16 @@ namespace ExamenED1EV2324
 
         // Función que realiza una división entera mediante restas sucesivas.
         // Contamos cuantas veces "cabe" el dividendo en el divisor.
-        int divisionRestas(int dividendo, int divisor)
+        int divisionRestas(int dividendoCDJ2324, int divisorCDJ2324)
         {
             // Declaramos una variable para almacenar el resultado.
             int cont = 0;
 
             // Restamos el divisor al dividendo
             //
-            while (dividendo > divisor)
+            while (dividendoCDJ2324 >= divisorCDJ2324)
             {
-                    divisor -= dividendo;
+                    dividendoCDJ2324 -= divisorCDJ2324;
                     cont++;
             }
 
@@ -55,7 +55,7 @@ namespace ExamenED1EV2324
                     throw new Exception("El divisor no puede ser cero.");
                 }
                 // Comprobamos que el divisor no sea mayor que el dividendo.
-                if (dividendo_CDJ2324 <= divisor_CDJ2324)
+                if (dividendo_CDJ2324 < divisor_CDJ2324)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor ha de ser menor que el dividendo.");
