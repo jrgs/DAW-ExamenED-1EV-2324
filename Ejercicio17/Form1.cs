@@ -19,16 +19,16 @@ namespace ExamenED1EV2324
 
         // Función que realiza una división entera mediante restas sucesivas.
         // Contamos cuantas veces "cabe" el dividendo en el divisor.
-        int divisionRestas(int dividendo, int divisor)
+        int divisionRestas(int MINB2324dividendo, int MINB2324divisor)
         {
             // Declaramos una variable para almacenar el resultado.
             int cont = 0;
 
             // Restamos el divisor al dividendo
             //
-            while (dividendo > divisor)
+            for (int i =MINB2324divisor; i<MINB2324dividendo; i++)
             {
-                    divisor -= dividendo;
+                    int resultado = MINB2324dividendo - MINB2324divisor;
                     cont++;
             }
 
@@ -42,30 +42,30 @@ namespace ExamenED1EV2324
             try
             {
                 // Declaramos las variables necesarias.
-                int dividendo, divisor, resultado;
+                int MINB2324dividendo, MINB2324divisor, resultado;
 
                 // Leemos los valores del cuadro de texto.
-                dividendo = int.Parse(txtDividendo.Text);
-                divisor = int.Parse(txtDivisor.Text);
+                MINB2324dividendo = int.Parse(txtDividendo.Text);
+                MINB2324divisor = int.Parse(txtDivisor.Text);
 
                 // Comprobamos que el divisor no sea cero.
-                if (divisor == 0)
+                if (MINB2324divisor == 0)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor no puede ser cero.");
                 }
                 // Comprobamos que el divisor no sea mayor que el dividendo.
-                if (dividendo <= divisor)
+                if (MINB2324dividendo < MINB2324divisor)
                 {
                     // Lanzamos una excepción.
-                    throw new Exception("El divisor ha de ser menor que el dividendo.");
+                    throw new Exception("El divisor no es menor o igual que el dividendo.");
                 }
 
                 // Llamamos a la función para realizar la división.
-                resultado = divisionRestas(dividendo, divisor);
+                resultado = divisionRestas(MINB2324dividendo, MINB2324divisor);
 
                 // Mostramos el resultado.
-                MessageBox.Show("El resultado de dividir " + dividendo + " entre " + divisor + " es : " + resultado);
+                MessageBox.Show("El resultado de dividir " + MINB2324dividendo + " entre " + MINB2324divisor + " es : " + resultado);
             }
             catch (FormatException ex)
             {
