@@ -19,18 +19,15 @@ namespace ExamenED1EV2324
 
         // Función que realiza una división entera mediante restas sucesivas.
         // Contamos cuantas veces "cabe" el dividendo en el divisor.
-        int divisionRestas(int dividendo, int divisor)
+        float divisionRestas(float dividendoSGL2324, float divisorSGL2324)
         {
             // Declaramos una variable para almacenar el resultado.
-            int cont = 0;
+            float cont = 1;
 
-            // Restamos el divisor al dividendo
-            //
-            while (dividendo > divisor)
-            {
-                    divisor -= dividendo;
-                    cont++;
-            }
+            // Realizamos la division
+           
+              cont= dividendoSGL2324 / divisorSGL2324;
+            
 
             // Devolvemos el resultado.
             return cont;
@@ -42,39 +39,33 @@ namespace ExamenED1EV2324
             try
             {
                 // Declaramos las variables necesarias.
-                int dividendo, divisor, resultado;
+                float dividendoSGL2324, divisorSGL2324, resultado;
 
                 // Leemos los valores del cuadro de texto.
-                dividendo = int.Parse(txtDividendo.Text);
-                divisor = int.Parse(txtDivisor.Text);
+                dividendoSGL2324 = float.Parse(txtDividendo.Text);
+                divisorSGL2324 = float.Parse(txtDivisor.Text);
 
                 // Comprobamos que el divisor no sea cero.
-                if (divisor == 0)
+                if (divisorSGL2324 == 0)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor no puede ser cero.");
                 }
-                // Comprobamos que el divisor no sea mayor que el dividendo.
-                if (dividendo <= divisor)
-                {
-                    // Lanzamos una excepción.
-                    throw new Exception("El divisor ha de ser menor que el dividendo.");
-                }
-
+              
                 // Llamamos a la función para realizar la división.
-                resultado = divisionRestas(dividendo, divisor);
+                resultado = divisionRestas(dividendoSGL2324, divisorSGL2324);
 
                 // Mostramos el resultado.
-                MessageBox.Show("El resultado de dividir " + dividendo + " entre " + divisor + " es : " + resultado);
+                MessageBox.Show("El resultado de dividir " + dividendoSGL2324 + " entre " + divisorSGL2324 + " es : " + resultado);
             }
             catch (FormatException ex)
             {
                 // Capturamos la excepción de formato incorrecto.
                 MessageBox.Show("Error de formato: " + ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception ex)  
             {
-                // Capturamos cualquier otra excepción.
+                // Capturamos cualquier otra excepción.    
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
