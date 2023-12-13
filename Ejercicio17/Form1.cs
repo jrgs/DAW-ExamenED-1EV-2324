@@ -49,7 +49,7 @@ namespace ExamenED1EV2324
                 divisor = int.Parse(txtDivisor.Text);
 
                 // Comprobamos que el divisor no sea cero.
-                if (divisor  ==  0)
+                if (divisor == 0)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor no puede ser cero.");
