@@ -17,64 +17,46 @@ namespace ExamenED1EV2324
             InitializeComponent();
         }
 
-        // Función que realiza una división entera mediante restas sucesivas.
-        // Contamos cuantas veces "cabe" el dividendo en el divisor.
-        int divisionRestas(int dividendo, int divisor)
+        int divisionRestas(int dividendoEV2324, int divisorEV2324)
         {
-            // Declaramos una variable para almacenar el resultado.
-            int cont = 0;
+            int cont = 1;
 
-            // Restamos el divisor al dividendo
-            //
-            while (dividendo > divisor)
+            while (dividendoEV2324 > divisorEV2324)
             {
-                    divisor -= dividendo;
+                    dividendoEV2324 -= divisorEV2324;
                     cont++;
             }
 
-            // Devolvemos el resultado.
             return cont;
         }
-
-        // Evento que se llama al pulsar el botón "Dividir".
         private void btDividir_Click(object sender, EventArgs e)
         {
             try
             {
-                // Declaramos las variables necesarias.
-                int dividendo, divisor, resultado;
+                int dividendoEV2324, divisorEV2324, resultado;
 
-                // Leemos los valores del cuadro de texto.
-                dividendo = int.Parse(txtDividendo.Text);
-                divisor = int.Parse(txtDivisor.Text);
+                dividendoEV2324 = int.Parse(txtDividendo.Text);
+                divisorEV2324 = int.Parse(txtDivisor.Text);
 
-                // Comprobamos que el divisor no sea cero.
-                if (divisor == 0)
+                if (divisorEV2324 == 0)
                 {
-                    // Lanzamos una excepción.
-                    throw new Exception("El divisor no puede ser cero.");
+                    throw new Exception("El divisorEV2324 no puede ser cero.");
                 }
-                // Comprobamos que el divisor no sea mayor que el dividendo.
-                if (dividendo <= divisor)
+                if (dividendoEV2324 < divisorEV2324)
                 {
-                    // Lanzamos una excepción.
-                    throw new Exception("El divisor ha de ser menor que el dividendo.");
+                    throw new Exception("El divisorEV2324 ha de ser menor que el dividendoEV2324.");
                 }
 
-                // Llamamos a la función para realizar la división.
-                resultado = divisionRestas(dividendo, divisor);
+                resultado = divisionRestas(dividendoEV2324, divisorEV2324);
 
-                // Mostramos el resultado.
-                MessageBox.Show("El resultado de dividir " + dividendo + " entre " + divisor + " es : " + resultado);
+                MessageBox.Show("El resultado de dividir " + dividendoEV2324 + " entre " + divisorEV2324 + " es : " + resultado);
             }
             catch (FormatException ex)
             {
-                // Capturamos la excepción de formato incorrecto.
                 MessageBox.Show("Error de formato: " + ex.Message);
             }
             catch (Exception ex)
             {
-                // Capturamos cualquier otra excepción.
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
