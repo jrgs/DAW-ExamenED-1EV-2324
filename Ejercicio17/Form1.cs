@@ -26,10 +26,10 @@ namespace ExamenED1EV2324
 
             // Restamos el divisor al dividendo
             //
-            while (dividendoATMS2324 > divisorATMS2324)
+            while (dividendoATMS2324 >= divisorATMS2324)
             {
-                    divisorATMS2324 -= dividendoATMS2324;
-                    cont++;
+                dividendoATMS2324 -= divisorATMS2324;
+                cont++;
             }
 
             // Devolvemos el resultado.
@@ -55,7 +55,7 @@ namespace ExamenED1EV2324
                     throw new Exception("El divisor no puede ser cero.");
                 }
                 // Comprobamos que el divisor no sea mayor que el dividendo.
-                if (dividendoATMS2324 <= divisorATMS2324)
+                if (dividendoATMS2324 < divisorATMS2324)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor ha de ser menor que el dividendo.");
