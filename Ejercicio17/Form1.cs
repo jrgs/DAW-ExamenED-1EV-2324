@@ -19,17 +19,21 @@ namespace ExamenED1EV2324
 
         // Función que realiza una división entera mediante restas sucesivas.
         // Contamos cuantas veces "cabe" el dividendo en el divisor.
-        int divisionRestas(int dividendo, int divisor)
+        int divisionRestas(int dividendoRCM2324, int divisorRCM2324)
         {
+            //? Aqui cambio la variable cont por 0
+
             // Declaramos una variable para almacenar el resultado.
-            int cont = 0;
+            int cont = 1;
 
             // Restamos el divisor al dividendo
-            //
-            while (dividendo > divisor)
+
+            //invierto dividendo y divisor
+            while (dividendoRCM2324 > divisorRCM2324)
             {
-                    divisor -= dividendo;
-                    cont++;
+                 dividendoRCM2324 -= divisorRCM2324;
+
+                cont ++;
             }
 
             // Devolvemos el resultado.
@@ -42,30 +46,33 @@ namespace ExamenED1EV2324
             try
             {
                 // Declaramos las variables necesarias.
-                int dividendo, divisor, resultado;
+                int dividendoRCM, divisorRCM, resultado;
 
                 // Leemos los valores del cuadro de texto.
-                dividendo = int.Parse(txtDividendo.Text);
-                divisor = int.Parse(txtDivisor.Text);
+                dividendoRCM = int.Parse(txtDividendo.Text);
+                divisorRCM = int.Parse(txtDivisor.Text);
 
                 // Comprobamos que el divisor no sea cero.
-                if (divisor == 0)
+                if (divisorRCM == 0)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor no puede ser cero.");
                 }
+
+                // suprimo el igual
                 // Comprobamos que el divisor no sea mayor que el dividendo.
-                if (dividendo <= divisor)
+                if (dividendoRCM < divisorRCM)
                 {
                     // Lanzamos una excepción.
                     throw new Exception("El divisor ha de ser menor que el dividendo.");
                 }
+               
 
                 // Llamamos a la función para realizar la división.
-                resultado = divisionRestas(dividendo, divisor);
+                resultado = divisionRestas(dividendoRCM, divisorRCM);
 
                 // Mostramos el resultado.
-                MessageBox.Show("El resultado de dividir " + dividendo + " entre " + divisor + " es : " + resultado);
+                MessageBox.Show("El resultado de dividir " + dividendoRCM + " entre " + divisorRCM + " es : " + resultado);
             }
             catch (FormatException ex)
             {
